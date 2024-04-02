@@ -1,0 +1,7 @@
+path: bird_dataset/
+train: 'train/images'
+val: 'valid/images'
+ 
+# class names
+names: 
+  0: 'bird'
