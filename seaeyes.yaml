@@ -1,6 +1,6 @@
-path: bird_dataset/
-train: 'train/images'
-val: 'valid/images'
+path: g:\seaeyes-data\
+train: 'images\train'
+val: 'images\val'
  
 # class names
 names: 
