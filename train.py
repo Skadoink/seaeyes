@@ -11,10 +11,12 @@ model = YOLO('yolov8s.pt')
 # Training.
 results = model.train(
    data='seaeyes.yaml',
-   imgsz=2000,
-   epochs=10,
-   batch=1,
+   imgsz=640,
+   epochs=20,
+   batch=16,
    name='yolov8s_10e',
-   workers = 0)
+   device = device,
+   workers = 0,
+   plots = True)
 
 results = model.val()
