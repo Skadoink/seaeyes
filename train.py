@@ -9,14 +9,14 @@ print(device)
 model = YOLO('yolov8s.pt')
  
 # Training.
-results = model.train(
+results =   model.train(
    data='seaeyes.yaml',
-   imgsz=640,
-   epochs=20,
-   batch=16,
+   imgsz=1280,
+   epochs=40,
+   batch=8,
    name='yolov8s_10e',
    device = device,
-   workers = 0,
-   plots = True)
+   workers = 8,
+   plots = True,)
 
 results = model.val()

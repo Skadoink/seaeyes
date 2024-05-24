@@ -1,6 +1,6 @@
-path: g:\seaeyes-data\
-train: 'images\train'
-val: 'images\val'
+path: seaeyes-data/
+train: 'images/train'
+val: 'images/val'
  
 # class names
 names: 
