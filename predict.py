@@ -9,5 +9,7 @@ class Seaeyes:
     # Load the model.
     model = YOLO('yolov8s.pt') # will be changed to custom trained model
     
-    def predict(image):
-        
+    def find_birds(image):
+        # Predict.
+        results = model(image)
+        return results
