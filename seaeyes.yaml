@@ -1,7 +1,6 @@
-path: g:\seaeyes-data\
-train: 'images\train'
-val: 'images\val'
- 
-# class names
-names: 
-  0: 'bird'
+path: d:\seaeyes-data-aabb
+train: images\train
+val: images\val
+
+names:
+  0: seabird
