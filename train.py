@@ -11,8 +11,11 @@ model = YOLO('yolo26s.pt')
 # Training with default parameters:
 results = model.train(
    data='seaeyes.yaml',
-   epochs=10,
+   epochs=100,
    imgsz=640,
+   device = device,
+   workers = 4,
+   batch=16,
    project="./runs"
 )
 print("trained")
