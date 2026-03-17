@@ -1,4 +1,4 @@
-path: j:\seaeyes-data-aabb
+path: seaeyes-data
 
 # Point to the .txt files (relative to 'path' above)
 train: autosplit_train.txt
