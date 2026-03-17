@@ -1,6 +1,9 @@
-path: d:\seaeyes-data-aabb
-train: images\train
-val: images\val
+path: j:\seaeyes-data-aabb
+
+# Point to the .txt files (relative to 'path' above)
+train: autosplit_train.txt
+val: autosplit_val.txt
+test: autosplit_test.txt  # Only if weights included a 3rd value
 
 names:
   0: seabird
