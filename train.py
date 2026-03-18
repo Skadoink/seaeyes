@@ -13,9 +13,9 @@ results = model.train(
    data='seaeyes.yaml',
    epochs=100,
    imgsz=640,
-   device = device,
-   workers = 4,
    batch=16,
+   workers=4,
+   device=device,
    project="./runs"
 )
 print("trained")
