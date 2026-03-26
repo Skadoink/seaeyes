@@ -17,7 +17,7 @@ if fps <= 0:
 
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-output_path = video_path.replace(".mp4", "_annotated_tracked_finetuned1.mp4")
+output_path = video_path.replace(".mp4", "_annotated_tracked_finetuned5.mp4")
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 out = cv2.VideoWriter(output_path, fourcc, fps, (frame_width, frame_height))
 
@@ -28,7 +28,7 @@ while cap.isOpened():
 
     if success:
         # Run YOLO26 tracking on the frame, persisting tracks between frames
-        results = model.track(frame, persist=True, tracker='bytetrack.yaml')
+        results = model.track(frame, persist=True, tracker='bytetrack_custom.yaml')
 
         #Run YOLO26 detection on the frame
         # results = model(frame)
