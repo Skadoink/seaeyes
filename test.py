@@ -17,7 +17,7 @@ if fps <= 0:
 
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-output_path = video_path.replace(".mp4", "_annotated_tracked_finetuned5.mp4")
+output_path = video_path.replace(".mp4", "_annotated_tracked_finetuned10.mp4")
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 out = cv2.VideoWriter(output_path, fourcc, fps, (frame_width, frame_height))
 
