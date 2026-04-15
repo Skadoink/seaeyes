@@ -12,6 +12,7 @@ def perform_detection(image_np):
         x, y, w, h = box.xywh[0].tolist() 
         
         detections.append({
+            "id": box.cls.item(), # Class ID as integer
             "label": model.names[int(box.cls)],
             "confidence": float(box.conf),
             "x": x - (w / 2), # Convert center-x to top-left-x
