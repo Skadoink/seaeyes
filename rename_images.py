@@ -30,6 +30,9 @@ def rename_images_and_annotations(directory="d:\\seaeyes-data-aabb\\images", sta
     Example: DSC_1110.jpg -> 0000.jpg, DSC_1110.json -> 0000.json
     Use start_index to choose the first index so you can continue numbering
     across folders without conflicts.
+
+    e.g. If you have already renamed 123 images in images/ and have added more to the folder, 
+    you can run rename_images_and_annotations(start_index=123) to continue numbering from 0123.jpg, 0123.json, etc.
     """
     directory = Path(directory)
     print(f"Scanning: {directory} (exists={directory.exists()})")
