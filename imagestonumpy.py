@@ -62,6 +62,7 @@ def load_and_preprocess(
 			arr = arr[..., ::-1]
 		imgs.append(arr)
 		count += 1
+		print("Images loaded:", count, end="\r")
 	if len(imgs) == 0:
 		raise RuntimeError("No images loaded. Check the images_dir path and contents.")
 	stacked = np.stack(imgs, axis=0)
@@ -80,8 +81,8 @@ def main() -> None:
 	p = argparse.ArgumentParser(description="Save calibration images as a numpy array")
 	p.add_argument("--images_dir", default=r"D:\\seaeyes-data-aabb\\images")
 	p.add_argument("--out", default="calibration_images.npy")
-	p.add_argument("--size", nargs=2, type=int, help="Width Height (e.g. 640 640)")
-	p.add_argument("--max", type=int, help="Maximum number of images to include")
+	p.add_argument("--size", default=[640, 640], nargs=2, type=int, help="Width Height (e.g. 640 640)")
+	p.add_argument("--max", default=1024, type=int, help="Maximum number of images to include")
 	p.add_argument("--bgr", action="store_true", help="Save channels in BGR order")
 	args = p.parse_args()
 
