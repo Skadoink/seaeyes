@@ -1,5 +1,4 @@
 print("starting")
-import cv2
 from ultralytics import YOLO 
 #Setup GPU
 import torch
@@ -11,25 +10,15 @@ model = YOLO('yolo26s.pt')
 # Training with default parameters:
 results = model.train(
    data='seaeyes.yaml',
-   epochs=100,
-   imgsz=640,
-   batch=16,
+   epochs=800,
+   patience=50,
+   imgsz=736,
+   batch=-1,
    workers=4,
    device=device,
    project="./runs"
 )
 print("trained")
 
-# # Training.
-# results = model.train(
-#    data='seaeyes.yaml',
-#    imgsz=640,
-#    epochs=20,
-#    batch=16,
-#    name='yolov8s_10e',
-#    device = device,
-#    workers = 0,
-#    plots = True)
-
-results = model.val(project="./runs")
-print("validated")
+results = model.val(project="./runs", data="seaeyes.yaml", split="test")
+print("tested")
