@@ -1,5 +1,12 @@
-runs/*
+*.onnx
 *.pt
+yolo26s-obb.pt
+yolo26s.pt
+yolov8n.pt
+yolov8s.pt
+
+
+runs/*
 seaeyes-data/
 cuda-repo-wsl-ubuntu-12-4-local_12.4.1-1_amd64.deb
 se/
@@ -158,3 +165,4 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+calibration_images.npy
