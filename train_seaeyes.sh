@@ -5,13 +5,13 @@
 #SBATCH --gpus-per-node=1
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=32G
-#SBATCH --time=04:00:00
+#SBATCH --time=24:00:00
 #SBATCH --output=logs/yolo_%j.out
 #SBATCH --error=logs/yolo_%j.err
 
 module load cuda
 module load python
 
-source se/bin/activate
+source .se/bin/activate
 
 python train.py
