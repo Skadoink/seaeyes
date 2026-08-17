@@ -74,5 +74,5 @@ def rename_images_and_annotations(directory="d:\\seaeyes-data-aabb\\images", sta
 if __name__ == "__main__":
     # Rename files in current directory
     # Example: start at 0123 -> rename_images_and_annotations(start_index=123)
-    rename_images_and_annotations(directory=r"d:\seaeyes-data-aabb\nextbatch", start_index=1755)
+    rename_images_and_annotations(directory=r"d:\seaeyes-data-aabb\currnextbatch", start_index=2136)
     # rename_images_and_annotations()

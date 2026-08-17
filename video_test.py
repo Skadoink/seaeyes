@@ -1,10 +1,10 @@
 import cv2
 from ultralytics import YOLO
 
-model = YOLO("best.pt")
+model = YOLO(r"runs\train_revamped\weights\revamped.pt")  
 
 # Open the video file
-video_path = r"C:\Users\oskae\Videos\SeawatcherTestFootage\KerguelenPetrelTestVideo.mp4"
+video_path = r"C:\Users\oskae\Videos\SeawatcherTestFootage\ShortTailedShearwaterFlock.mp4"
 cap = cv2.VideoCapture(video_path)
 
 if not cap.isOpened():
@@ -17,7 +17,7 @@ if fps <= 0:
 
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-output_path = video_path.replace(".mp4", "_annotated_tracked_finetuned10.mp4")
+output_path = video_path.replace(".mp4", "_annotated_revamped.mp4")
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 out = cv2.VideoWriter(output_path, fourcc, fps, (frame_width, frame_height))
 
@@ -28,10 +28,10 @@ while cap.isOpened():
 
     if success:
         # Run YOLO26 tracking on the frame, persisting tracks between frames
-        results = model.track(frame, persist=True, tracker='bytetrack_custom.yaml')
+        # results = model.track(frame, persist=True, tracker='bytetrack_custom.yaml')
 
         #Run YOLO26 detection on the frame
-        # results = model(frame)
+        results = model(frame)
 
         # Visualize the results on the frame
         annotated_frame = results[0].plot()
